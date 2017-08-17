@@ -1,4 +1,29 @@
-# CarND-Controls-MPC
+# CarND-Controls-MPC (Solution adopted)
+---
+The aim of this project is implement a Model Predictive Control to drive the car around the lake race track.
+Simulator do not provide us the cross track error (CTE) like in the previos projec and exists a 100 millisecond latency between actuations commands on top of the connection latency.
+
+State, actuators and update equation, are obtained from Udacity class, as we can see in the next link. [Udacity class](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/f1820894-8322-4bb3-81aa-b26b3c6dcbaf/lessons/338b458f-7ebf-449c-9ad1-611eb933b076/concepts/ee21948d-7fad-4821-b61c-0d69bbfcc425)
+
+[//]: # (Image References)
+[image1]: ./Equations.png
+![alt text][image1]
+
+In the previous image are the equations of:
+* X(t+1): Equation to obtain position X of the car in next cycles.
+* Y(t+1): Equation to obtain position Y of the car in next cycles.
+* Psi(t+1): Orientation of the car in next cycles.
+* cte(t+1): Cross track error of the car in next cycles.
+* ePsi(t+1): Orientation error of the car in next cycles.
+
+Elapsed duration (dt) was set as 0.1, which is equal to the latency time(100 ms). An elapsed duration bigger will produce a slower response. Timestep length choosed was N = 10, so we calculate position for one second. Increase number of positions estimated dont produce better results in this case. Is preferably having a low latency in the control system similar to the actuators latency.
+
+Waypoints or path points are prepocesed translating them to the cordinate system of the car.
+
+To account with the latency big weights are given to cte, and the use of actuators and the gap value between sequential actuations are incorporated to cost equations to minimize it. Furhtermore inspired by Jeremy Shannon, equations are altered to apply the actuations later (lines 111 to 120 in MPC.cpp) to compensate the interval between cycle time and latency.
+
+# CarND-Controls-MPC (Udacity)
+
 Self-Driving Car Engineer Nanodegree Program
 
 ---
