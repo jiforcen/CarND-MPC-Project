@@ -8,6 +8,7 @@ State, actuators and update equation, are obtained from Udacity class, as we can
 [//]: # (Image References)
 [image1]: ./Equations.png
 ![alt text][image1]
+
 In the previous image are the equations of:
 * X(t+1): Equation to obtain position X of the car in next cycles.
 * Y(t+1): Equation to obtain position Y of the car in next cycles.
