@@ -22,6 +22,9 @@ Waypoints or path points are prepocesed translating them to the cordinate system
 
 To account with the latency big weights are given to cte, and the use of actuators and the gap value between sequential actuations are incorporated to cost equations to minimize it. Furhtermore inspired by Jeremy Shannon, equations are altered to apply the actuations later (lines 111 to 120 in MPC.cpp) to compensate the interval between cycle time and latency.
 
+Link to video of the car making a complete lap around the track. [Video](https://github.com/jiforcen/CarND-MPC-Project/blob/master/CompleteLap1.mov). 
+
+
 # CarND-Controls-MPC (Udacity)
 
 Self-Driving Car Engineer Nanodegree Program
